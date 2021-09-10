@@ -1,10 +1,23 @@
 input.onButtonPressed(Button.A, function () {
-    motor.servo(motor.Servos.S8, 90)
+    if (轉速段數 < 3) {
+        轉速段數 += 1
+        basic.showNumber(轉速段數)
+        motor.MotorRun(motor.Motors.M2, motor.Dir.CW, 50 + (轉速段數 - 1) * 100)
+    }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    motor.servo(motor.Servos.S8, 0)
+    motor.motorStopAll()
+    basic.showNumber(0)
+    轉速段數 = 0
 })
 input.onButtonPressed(Button.B, function () {
-    motor.servo(motor.Servos.S8, 180)
+    if (轉速段數 > 1) {
+        轉速段數 += -1
+        basic.showNumber(轉速段數)
+        motor.MotorRun(motor.Motors.M2, motor.Dir.CW, 50 + (轉速段數 - 1) * 100)
+    }
 })
+let 轉速段數 = 0
 motor.motorStopAll()
+basic.showNumber(0)
+轉速段數 = 0
