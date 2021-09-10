@@ -1,5 +1,5 @@
 {
-    "name": "程式-驅動電機2 (直流馬達)",
+    "name": "程式-驅動舵機(伺服馬達)",
     "version": "0.0.0",
     "description": "",
     "dependencies": {

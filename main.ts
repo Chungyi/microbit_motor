@@ -1,12 +1,10 @@
 input.onButtonPressed(Button.A, function () {
-    motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 150)
-    motor.motorStop(motor.Motors.M2)
+    motor.servo(motor.Servos.S8, 90)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    motor.motorStopAll()
+    motor.servo(motor.Servos.S8, 0)
 })
 input.onButtonPressed(Button.B, function () {
-    motor.MotorRun(motor.Motors.M2, motor.Dir.CW, 150)
-    motor.motorStop(motor.Motors.M1)
+    motor.servo(motor.Servos.S8, 180)
 })
 motor.motorStopAll()
